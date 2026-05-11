@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
+import { asset } from "@/lib/asset";
 
 export default function Lightbox({
   images,
@@ -85,7 +86,7 @@ export default function Lightbox({
       )}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={images[index]}
+        src={asset(images[index])}
         alt={`${alt} ${index + 1}`}
         onClick={(e) => e.stopPropagation()}
         className="max-h-[90vh] max-w-[92vw] object-contain"

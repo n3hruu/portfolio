@@ -25,6 +25,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Subpath the site is served from on GitHub Pages
+          # (https://n3hruu.github.io/portfolio/). Set to "" once a custom
+          # domain is configured so the site serves from the root.
+          NEXT_PUBLIC_BASE_PATH: /portfolio
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

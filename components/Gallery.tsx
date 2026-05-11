@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Lightbox from "./Lightbox";
+import { asset } from "@/lib/asset";
 
 type Variant = "grid" | "masonry";
 
@@ -29,7 +30,7 @@ export default function Gallery({
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={src}
+                src={asset(src)}
                 alt={`${alt} ${i + 1}`}
                 loading="lazy"
                 className="block h-auto w-full transition-opacity hover:opacity-90"
@@ -62,7 +63,7 @@ export default function Gallery({
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={src}
+              src={asset(src)}
               alt={`${alt} ${i + 1}`}
               loading="lazy"
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
