@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Nehru Madan — Film, Photography, Projects",
   description:
     "Personal portfolio of Nehru Madan: film, photography, and miscellaneous projects.",
+  // Hide from search engines while content is still being built out.
+  // Remove this `robots` field when ready to be indexed.
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({

@@ -5,10 +5,10 @@ export const metadata: Metadata = {
 };
 
 const contact = [
-  { label: "Email", href: "mailto:hello@example.com" },
-  { label: "Instagram", href: "https://instagram.com/" },
-  { label: "Letterboxd", href: "https://letterboxd.com/" },
-  { label: "GitHub", href: "https://github.com/" },
+  { label: "Email", href: "mailto:nehru.madan@gmail.com" },
+  { label: "Instagram", href: "https://instagram.com/nehrumadan" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nehrumadan" },
+  { label: "GitHub", href: "https://github.com/n3hruu" },
 ];
 
 export default function About() {
@@ -22,11 +22,21 @@ export default function About() {
       </h1>
       <div className="mt-10 space-y-6 text-lg leading-relaxed">
         <p>
-          Placeholder bio. Write a paragraph or two here about who you are,
-          what you make, and what you&apos;re curious about lately.
+          I am a third-year Renée Crown Honors student at Syracuse University
+          pursuing a B.S. in Television, Radio, and Film through the S.I.
+          Newhouse School of Public Communications, with a minor in Finance
+          through the Whitman School of Management.
+        </p>
+        <p>
+          I&apos;m passionate about exploring the intersection between the
+          creative and business spheres of the film industry. I&apos;m
+          currently pursuing opportunities in talent representation, film
+          development, and film distribution. I have previous experience with
+          video editing, script coverage, commercial production, and digital
+          brand management.
         </p>
         <p className="text-[var(--color-muted)]">
-          Based somewhere · Working on something
+          New York City — Syracuse
         </p>
       </div>
 
@@ -49,9 +59,6 @@ export default function About() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-xs text-[var(--color-muted)]">
-          Update these placeholder links in <code>app/about/page.tsx</code>.
-        </p>
       </section>
     </div>
   );
