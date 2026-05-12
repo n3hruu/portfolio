@@ -19,10 +19,7 @@ export const projects: MiscProject[] = [
     kind: "Journal Article",
     description:
       "Originally written for a writing class and later published in Intertext, Syracuse University's undergraduate academic journal, \"Through the Lens of Fire: Photography and Resistance\" explores how cultural histories can be preserved and understood through intentional photography.",
-    // TODO: drop a real cover image at
-    // public/images/projects/through-the-lens-of-fire/cover.jpg
-    // then change this path to "/images/projects/through-the-lens-of-fire/cover.jpg"
-    cover: "/images/placeholders/project-1-cover.svg",
+    cover: "/images/projects/through-the-lens-of-fire/cover.jpg",
     pdf: "/projects/through-the-lens-of-fire/article.pdf",
     links: [
       { label: "Read Online", href: "https://surface.syr.edu/intertext/" },
