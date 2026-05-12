@@ -17,7 +17,7 @@ export const series: PhotoSeries[] = [
     year: "2024–2026",
     description:
       "Live music captured from the pit and beyond — performances and atmosphere across venues and acts.",
-    cover: "/images/photography/concert-photography/01RossLynch-3.jpg",
+    cover: "/images/photography/concert-photography/02RoleModel-4.jpg",
     images: [
       "/images/photography/concert-photography/01RossLynch-3.jpg",
       "/images/photography/concert-photography/02RoleModel-4.jpg",
