@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Gallery from "@/components/Gallery";
-import { films, getFilm } from "@/lib/films";
+import { films, getFilm, type Credit } from "@/lib/films";
+import { asset } from "@/lib/asset";
 
 export function generateStaticParams() {
   return films.map((f) => ({ slug: f.slug }));
@@ -22,6 +23,21 @@ export async function generateMetadata({
   };
 }
 
+// Collapse consecutive same-role credits so we render the role label once
+// with multiple names beneath it (e.g. 4 Producers).
+function groupCredits(credits: Credit[]) {
+  const groups: { role: string; entries: Credit[] }[] = [];
+  for (const c of credits) {
+    const last = groups[groups.length - 1];
+    if (last && last.role === c.role) {
+      last.entries.push(c);
+    } else {
+      groups.push({ role: c.role, entries: [c] });
+    }
+  }
+  return groups;
+}
+
 export default async function FilmDetail({
   params,
 }: {
@@ -31,6 +47,8 @@ export default async function FilmDetail({
   const film = getFilm(slug);
   if (!film) notFound();
 
+  const creditGroups = film.credits ? groupCredits(film.credits) : [];
+
   return (
     <article className="mx-auto max-w-5xl px-6 py-20">
       <Link
@@ -39,28 +57,90 @@ export default async function FilmDetail({
       >
         ← Film
       </Link>
+
       <header className="mt-6 mb-12 border-b border-[var(--color-border)] pb-10">
-        <h1 className="font-serif text-5xl tracking-tight">{film.title}</h1>
-        <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
-          {film.role} · {film.year}
-        </p>
-        <p className="mt-6 max-w-prose text-lg leading-relaxed">
-          {film.synopsis}
-        </p>
+        {film.poster ? (
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_2fr] md:gap-12">
+            <div className="bg-[var(--color-surface)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset(film.poster)}
+                alt={`${film.title} poster`}
+                className="block w-full"
+              />
+            </div>
+            <div>
+              <h1 className="font-serif text-5xl tracking-tight">{film.title}</h1>
+              <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
+                {film.role} · {film.year}
+              </p>
+              <p className="mt-6 text-lg leading-relaxed">{film.synopsis}</p>
+            </div>
+          </div>
+        ) : (
+          <>
+            <h1 className="font-serif text-5xl tracking-tight">{film.title}</h1>
+            <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
+              {film.role} · {film.year}
+            </p>
+            <p className="mt-6 max-w-prose text-lg leading-relaxed">
+              {film.synopsis}
+            </p>
+          </>
+        )}
       </header>
 
-      <Gallery images={film.stills} alt={film.title} variant="grid" />
+      {film.stills.length > 0 && (
+        <Gallery images={film.stills} alt={film.title} variant="grid" />
+      )}
 
-      {film.credits && film.credits.length > 0 && (
+      {film.awards && film.awards.length > 0 && (
+        <section className="mt-16 border-t border-[var(--color-border)] pt-10">
+          <h2 className="font-serif text-2xl">Awards & Festivals</h2>
+          <ul className="mt-6 space-y-3">
+            {film.awards.map((a, i) => (
+              <li
+                key={i}
+                className="flex flex-col gap-1 border-b border-[var(--color-border)]/60 pb-3 sm:flex-row sm:items-baseline sm:gap-6"
+              >
+                {a.type && (
+                  <span className="text-xs uppercase tracking-widest text-[var(--color-accent)] sm:w-44 sm:shrink-0">
+                    {a.type}
+                  </span>
+                )}
+                <span className="text-base">{a.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {creditGroups.length > 0 && (
         <section className="mt-16 border-t border-[var(--color-border)] pt-10">
           <h2 className="font-serif text-2xl">Credits</h2>
-          <dl className="mt-6 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
-            {film.credits.map((c) => (
-              <div key={c.role} className="flex justify-between gap-6 border-b border-[var(--color-border)]/60 pb-2">
-                <dt className="text-[var(--color-muted)] uppercase tracking-widest text-xs">
-                  {c.role}
+          <dl className="mt-6 space-y-3 text-sm">
+            {creditGroups.map((group, gi) => (
+              <div
+                key={gi}
+                className="grid grid-cols-1 gap-1 border-b border-[var(--color-border)]/60 pb-3 sm:grid-cols-[12rem_1fr] sm:gap-6"
+              >
+                <dt className="text-xs uppercase tracking-widest text-[var(--color-muted)]">
+                  {group.role}
                 </dt>
-                <dd>{c.name}</dd>
+                <dd>
+                  <ul className="space-y-1">
+                    {group.entries.map((e, ei) => (
+                      <li key={ei}>
+                        {e.name}
+                        {e.as && (
+                          <span className="italic text-[var(--color-muted)]">
+                            {" "}as {e.as}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
               </div>
             ))}
           </dl>

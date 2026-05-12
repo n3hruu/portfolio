@@ -1,3 +1,17 @@
+export type Credit = {
+  role: string;
+  name: string;
+  // For cast credits — the character they play (rendered as "Name as Character").
+  as?: string;
+};
+
+export type Award = {
+  // Festival or award name, e.g. "Sundance Film Festival 2026".
+  name: string;
+  // Free-form qualifier, e.g. "Winner", "Official Selection", "Nominee".
+  type?: string;
+};
+
 export type FilmProject = {
   slug: string;
   title: string;
@@ -6,28 +20,56 @@ export type FilmProject = {
   synopsis: string;
   cover: string;
   stills: string[];
-  credits?: { role: string; name: string }[];
+  poster?: string;
+  credits?: Credit[];
+  awards?: Award[];
   featured?: boolean;
 };
 
 export const films: FilmProject[] = [
   {
-    slug: "untitled-short-one",
-    title: "Untitled Short One",
+    slug: "night-shift",
+    title: "Night Shift",
     year: 2025,
-    role: "Director, Writer",
+    role: "Editor, Producer, Assistant Director",
     synopsis:
-      "A placeholder synopsis. Two strangers share a long bus ride through a city that won't stop raining.",
+      "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met not with concern but with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
+    // TODO: swap to one of the dropped stills (or a hero frame from the poster)
+    // once those are in place. Path will be /images/film/night-shift/<file>.
     cover: "/images/placeholders/film-1-cover.svg",
-    stills: [
-      "/images/placeholders/film-1-cover.svg",
-      "/images/placeholders/film-1-still-2.svg",
-      "/images/placeholders/film-1-still-3.svg",
-    ],
+    stills: [],
     credits: [
-      { role: "Director of Photography", name: "—" },
-      { role: "Editor", name: "—" },
-      { role: "Sound", name: "—" },
+      { role: "Director", name: "Frederic Robb" },
+      { role: "Director of Photography", name: "Alex McCollum" },
+      { role: "Editor", name: "Nehru Madan" },
+      { role: "Production Designer", name: "Alejandro Rangel" },
+      { role: "Producer", name: "Alex McCollum" },
+      { role: "Producer", name: "Frederic Robb" },
+      { role: "Producer", name: "Nehru Madan" },
+      { role: "Producer", name: "Alejandro Rangel" },
+      { role: "Key Cast", name: "Luckas Urtubey", as: "Miller Johnson" },
+      { role: "Key Cast", name: "Roman Izhboldin", as: "Larry" },
+      { role: "Key Cast", name: "André Vital Pardue", as: "Coffee Runner" },
+      { role: "Key Cast", name: "Marcela Rojickova", as: "Stamper" },
+      { role: "Key Cast", name: "Igor Prieložný", as: "Typer" },
+      { role: "Key Cast", name: "Max Griffith", as: "10" },
+      { role: "Assistant Director", name: "Nehru Madan" },
+      { role: "Camera Supervisor", name: "Zaher Jureidini" },
+      { role: "1st Assistant Camera", name: "Ella Miller" },
+      { role: "2nd Assistant Camera", name: "Dariyah Woodward" },
+      { role: "Gaffer", name: "George Traylor" },
+      { role: "Key Grip", name: "Jai Narayan" },
+      { role: "Sound Recordist", name: "Gabrielė Dikčiūtė" },
+      { role: "Sound Designer", name: "Gabrielė Dikčiūtė" },
+      { role: "Sound Designer", name: "Camryn Banks" },
+      { role: "Wardrobe", name: "Alejandro Rangel" },
+      { role: "Art Assistant", name: "Cate Laverty" },
+      { role: "Script Supervisor", name: "Camryn Banks" },
+      { role: "Production Assistant", name: "Emalena Preveza" },
+      { role: "Colorist", name: "Marek Jicha" },
+      { role: "Project Mentor", name: "Leila Basma" },
+      { role: "Production Manager", name: "Sophie Hurt" },
+      { role: "Composer", name: "Alejandro Rangel" },
     ],
     featured: true,
   },
