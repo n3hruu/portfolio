@@ -7,12 +7,17 @@ export default function ProjectCard({
   meta,
   cover,
   description,
+  coverScale,
 }: {
   href: string;
   title: string;
   meta?: string;
   cover: string;
   description?: string;
+  // Optional zoom-in on the cover image only (e.g. to crop letterboxed
+  // black bars baked into a film still). 1 = no zoom. Overrides the
+  // default subtle hover scale.
+  coverScale?: number;
 }) {
   return (
     <Link href={href} className="group block">
@@ -22,7 +27,12 @@ export default function ProjectCard({
           src={asset(cover)}
           alt={title}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          style={coverScale ? { transform: `scale(${coverScale})` } : undefined}
+          className={
+            coverScale
+              ? "h-full w-full object-cover"
+              : "h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          }
         />
       </div>
       <div className="mt-4 flex items-baseline justify-between gap-4">

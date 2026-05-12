@@ -56,6 +56,7 @@ export default function Home() {
                 title={featuredFilm.title}
                 meta={`Film · ${featuredFilm.year}`}
                 cover={featuredFilm.cover}
+                coverScale={featuredFilm.coverScale}
                 description={featuredFilm.synopsis}
               />
             )}

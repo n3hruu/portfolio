@@ -24,6 +24,9 @@ export type FilmProject = {
   credits?: Credit[];
   awards?: Award[];
   featured?: boolean;
+  // Optional CSS zoom applied only to the index-card cover (not the gallery
+  // stills). Useful when a still has letterboxed black bars baked in.
+  coverScale?: number;
 };
 
 export const films: FilmProject[] = [
@@ -33,14 +36,16 @@ export const films: FilmProject[] = [
     year: 2025,
     role: "Editor, Producer, Assistant Director",
     synopsis:
-      "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met not with concern but with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
-    cover: "/images/film/night-shift/01.jpg",
+      "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
+    cover: "/images/film/night-shift/02.jpg",
+    coverScale: 1.15,
     stills: [
       "/images/film/night-shift/01.jpg",
       "/images/film/night-shift/02.jpg",
       "/images/film/night-shift/03.jpg",
       "/images/film/night-shift/04.jpg",
       "/images/film/night-shift/05.jpg",
+      "/images/film/night-shift/06.jpg",
     ],
     poster: "/images/film/night-shift/poster-main.jpg",
     awards: [

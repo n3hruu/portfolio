@@ -23,6 +23,7 @@ export default function FilmIndex() {
             title={film.title}
             meta={`${film.role} · ${film.year}`}
             cover={film.cover}
+            coverScale={film.coverScale}
             description={film.synopsis}
           />
         ))}
