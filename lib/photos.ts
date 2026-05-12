@@ -6,6 +6,8 @@ export type PhotoSeries = {
   cover: string;
   images: string[];
   featured?: boolean;
+  // 2 = larger photos (good for landscape-heavy sets), 3 = default tighter grid
+  galleryColumns?: 2 | 3;
 };
 
 export const series: PhotoSeries[] = [
@@ -31,6 +33,7 @@ export const series: PhotoSeries[] = [
       "/images/photography/concert-photography/12DSC02489.jpg",
     ],
     featured: true,
+    galleryColumns: 2,
   },
   {
     slug: "environments",

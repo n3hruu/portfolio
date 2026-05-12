@@ -10,17 +10,27 @@ export default function Gallery({
   images,
   variant = "grid",
   alt,
+  columns = 3,
 }: {
   images: string[];
   variant?: Variant;
   alt: string;
+  // Masonry column count on large screens. Use 2 for landscape-heavy
+  // collections where you want each photo to read larger.
+  columns?: 2 | 3;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   if (variant === "masonry") {
+    // Tailwind needs literal class strings to detect them, so branch instead
+    // of interpolating.
+    const masonryClass =
+      columns === 2
+        ? "columns-1 gap-4 sm:columns-2 [column-fill:_balance]"
+        : "columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]";
     return (
       <>
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]">
+        <div className={masonryClass}>
           {images.map((src, i) => (
             <button
               key={src}

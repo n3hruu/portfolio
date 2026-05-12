@@ -39,17 +39,22 @@ export default async function SeriesDetail({
       >
         ← Photography
       </Link>
-      <header className="mt-6 mb-12 border-b border-[var(--color-border)] pb-10">
+      <header className="mt-6 mb-10 border-b border-[var(--color-border)] pb-8">
         <h1 className="font-serif text-5xl tracking-tight">{s.title}</h1>
         <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
           {s.year} · {s.images.length} images
         </p>
-        <p className="mt-6 max-w-prose text-lg leading-relaxed">
-          {s.description}
+        <p className="mt-6 font-serif text-xl italic text-[var(--color-muted)]">
+          Click any image to enlarge.
         </p>
       </header>
 
-      <Gallery images={s.images} alt={s.title} variant="masonry" />
+      <Gallery
+        images={s.images}
+        alt={s.title}
+        variant="masonry"
+        columns={s.galleryColumns ?? 3}
+      />
     </article>
   );
 }
