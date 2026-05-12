@@ -1,7 +1,7 @@
 export type PhotoSeries = {
   slug: string;
   title: string;
-  year: number;
+  year: string;
   description: string;
   cover: string;
   images: string[];
@@ -10,31 +10,51 @@ export type PhotoSeries = {
 
 export const series: PhotoSeries[] = [
   {
-    slug: "city-at-night",
-    title: "City at Night",
-    year: 2025,
+    slug: "concert-photography",
+    title: "Concert Photography",
+    year: "2024–2026",
     description:
-      "Placeholder series. A walk through neon-lit streets after closing time.",
-    cover: "/images/placeholders/photo-1-cover.svg",
+      "Live music captured from the pit and beyond — performances and atmosphere across venues and acts.",
+    cover: "/images/photography/concert-photography/01RossLynch-3.jpg",
     images: [
-      "/images/placeholders/photo-1-cover.svg",
-      "/images/placeholders/photo-1-2.svg",
-      "/images/placeholders/photo-1-3.svg",
-      "/images/placeholders/photo-1-4.svg",
+      "/images/photography/concert-photography/01RossLynch-3.jpg",
+      "/images/photography/concert-photography/02RoleModel-4.jpg",
+      "/images/photography/concert-photography/03RossLynch-1.jpg",
+      "/images/photography/concert-photography/04RoleModel-3.jpg",
+      "/images/photography/concert-photography/05Smino1.jpg",
+      "/images/photography/concert-photography/06RossLynch-4.jpg",
+      "/images/photography/concert-photography/07Smino3.jpg",
+      "/images/photography/concert-photography/08RoleModel-6.jpg",
+      "/images/photography/concert-photography/09RoleModel-5.jpg",
+      "/images/photography/concert-photography/10Smino2.jpg",
+      "/images/photography/concert-photography/11RossLynch-2.jpg",
+      "/images/photography/concert-photography/12DSC02489.jpg",
     ],
     featured: true,
   },
   {
-    slug: "still-lifes",
-    title: "Still Lifes",
-    year: 2024,
+    slug: "environments",
+    title: "Environments",
+    year: "2019–2023",
     description:
-      "Placeholder. Studies of light falling on ordinary objects, shot at home.",
-    cover: "/images/placeholders/photo-2-cover.svg",
+      "Studies of place — natural and built, observed across four years.",
+    cover: "/images/photography/environments/01IMG_5764.JPG",
     images: [
-      "/images/placeholders/photo-2-cover.svg",
-      "/images/placeholders/photo-2-2.svg",
-      "/images/placeholders/photo-2-3.svg",
+      "/images/photography/environments/01IMG_5764.JPG",
+      "/images/photography/environments/02IMG_5285.JPG",
+      "/images/photography/environments/03IMG_5085.JPG",
+      "/images/photography/environments/04IMG_5060.jpeg",
+      "/images/photography/environments/05DSC_0324.JPG",
+      "/images/photography/environments/06IMG_5080.JPG",
+      "/images/photography/environments/07IMG_5081.JPG",
+      "/images/photography/environments/08IMG_5083.JPG",
+      "/images/photography/environments/09IMG_5242.JPG",
+      "/images/photography/environments/10IMG_5233.JPG",
+      "/images/photography/environments/DSC_0397.JPG",
+      "/images/photography/environments/IMG_5078.JPG",
+      "/images/photography/environments/IMG_5079.JPG",
+      "/images/photography/environments/IMG_5082.JPG",
+      "/images/photography/environments/IMG_5086.JPG",
     ],
   },
 ];
