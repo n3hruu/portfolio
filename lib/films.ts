@@ -34,10 +34,23 @@ export const films: FilmProject[] = [
     role: "Editor, Producer, Assistant Director",
     synopsis:
       "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met not with concern but with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
-    // TODO: swap to one of the dropped stills (or a hero frame from the poster)
-    // once those are in place. Path will be /images/film/night-shift/<file>.
-    cover: "/images/placeholders/film-1-cover.svg",
-    stills: [],
+    cover: "/images/film/night-shift/01.jpg",
+    stills: [
+      "/images/film/night-shift/01.jpg",
+      "/images/film/night-shift/02.jpg",
+      "/images/film/night-shift/03.jpg",
+      "/images/film/night-shift/04.jpg",
+      "/images/film/night-shift/05.jpg",
+    ],
+    poster: "/images/film/night-shift/poster-main.jpg",
+    awards: [
+      { type: "Grand Prize", name: "Salt City Film Festival 2026" },
+      { type: "Audience Award", name: "Salt City Film Festival 2026" },
+      { type: "Official Selection", name: "Queens City Culture Film Festival 2026" },
+      { type: "Best Actor", name: "Queens City Culture Film Festival 2026" },
+      { type: "Bronze Award", name: "Independent Shorts Awards Film Festival" },
+      { type: "Honorable Mention", name: "Independent Shorts Awards Film Festival 2026" },
+    ],
     credits: [
       { role: "Director", name: "Frederic Robb" },
       { role: "Director of Photography", name: "Alex McCollum" },
