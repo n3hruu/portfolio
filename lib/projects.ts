@@ -7,20 +7,26 @@ export type MiscProject = {
   cover: string;
   images?: string[];
   body?: string;
+  pdf?: string;
   links?: { label: string; href: string }[];
 };
 
 export const projects: MiscProject[] = [
   {
-    slug: "field-notes",
-    title: "Field Notes",
-    year: 2025,
-    kind: "Writing",
+    slug: "through-the-lens-of-fire",
+    title: "Through the Lens of Fire: Photography and Resistance",
+    year: 2026,
+    kind: "Journal Article",
     description:
-      "Placeholder. An occasional log of small observations from travel and walking.",
+      "Originally written for a writing class and later published in Intertext, Syracuse University's undergraduate academic journal, \"Through the Lens of Fire: Photography and Resistance\" explores how cultural histories can be preserved and understood through intentional photography.",
+    // TODO: drop a real cover image at
+    // public/images/projects/through-the-lens-of-fire/cover.jpg
+    // then change this path to "/images/projects/through-the-lens-of-fire/cover.jpg"
     cover: "/images/placeholders/project-1-cover.svg",
-    body:
-      "This is placeholder body text. Replace with the full writeup, embedded media, or whatever the project calls for.",
+    pdf: "/projects/through-the-lens-of-fire/article.pdf",
+    links: [
+      { label: "Read Online", href: "https://surface.syr.edu/intertext/" },
+    ],
   },
   {
     slug: "sketchbook",

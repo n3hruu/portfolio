@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Gallery from "@/components/Gallery";
 import { projects, getProject } from "@/lib/projects";
+import { asset } from "@/lib/asset";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -46,6 +47,27 @@ export default async function ProjectDetail({
         </p>
         <p className="mt-6 text-lg leading-relaxed">{p.description}</p>
       </header>
+
+      {p.pdf && (
+        <section className="mt-4 mb-12">
+          <iframe
+            src={asset(p.pdf)}
+            title={p.title}
+            className="block w-full h-[85vh] border border-[var(--color-border)] bg-[var(--color-surface)]"
+          />
+          <p className="mt-3 text-sm text-[var(--color-muted)]">
+            Trouble viewing inline?{" "}
+            <a
+              href={asset(p.pdf)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-b border-[var(--color-border)] text-[var(--color-fg)] hover:border-[var(--color-accent)]"
+            >
+              Open PDF in a new tab ↗
+            </a>
+          </p>
+        </section>
+      )}
 
       {p.body && (
         <div className="prose-cinematic max-w-prose leading-relaxed text-[var(--color-fg)]">
