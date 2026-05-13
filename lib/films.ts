@@ -17,7 +17,13 @@ export type FilmProject = {
   title: string;
   year: number;
   role: string;
+  // Full synopsis shown on the detail page.
   synopsis: string;
+  // Short version shown on the Film index card. Falls back to `synopsis`
+  // if not set.
+  shortSynopsis?: string;
+  // Runtime as MM:SS for short films, or "Xm" for features. Optional.
+  runtime?: string;
   cover: string;
   stills: string[];
   poster?: string;
@@ -37,6 +43,9 @@ export const films: FilmProject[] = [
     role: "Editor, Producer, Assistant Director",
     synopsis:
       "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
+    shortSynopsis:
+      "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom.",
+    runtime: "9:52",
     cover: "/images/film/night-shift/01.jpg",
     stills: [
       "/images/film/night-shift/01.jpg",

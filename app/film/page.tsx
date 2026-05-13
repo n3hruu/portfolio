@@ -21,10 +21,10 @@ export default function FilmIndex() {
             key={film.slug}
             href={`/film/${film.slug}/`}
             title={film.title}
-            meta={`${film.role} · ${film.year}`}
+            meta={[film.role, film.year, film.runtime].filter(Boolean).join(" · ")}
             cover={film.cover}
             coverScale={film.coverScale}
-            description={film.synopsis}
+            description={film.shortSynopsis ?? film.synopsis}
           />
         ))}
       </div>
