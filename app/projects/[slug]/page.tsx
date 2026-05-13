@@ -40,7 +40,21 @@ export default async function ProjectDetail({
       >
         ← Projects
       </Link>
-      <header className="mt-6 mb-12 border-b border-[var(--color-border)] pb-10">
+
+      {p.logo && (
+        <div className="mt-6 flex items-center justify-center bg-[#f5f1e8] px-8 py-16 sm:py-24">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset(p.cover)}
+            alt={`${p.title} logo`}
+            className="max-h-64 w-auto object-contain"
+          />
+        </div>
+      )}
+
+      <header
+        className={`${p.logo ? "mt-10" : "mt-6"} mb-12 border-b border-[var(--color-border)] pb-10`}
+      >
         <h1 className="font-serif text-5xl tracking-tight">{p.title}</h1>
         <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
           {p.kind} · {p.year}
@@ -77,6 +91,26 @@ export default async function ProjectDetail({
             </p>
           ))}
         </div>
+      )}
+
+      {p.highlights && p.highlights.length > 0 && (
+        <section className="mt-12 border-t border-[var(--color-border)] pt-10">
+          <h2 className="font-serif text-2xl">Highlights</h2>
+          <ul className="mt-6 space-y-3">
+            {p.highlights.map((h, i) => (
+              <li
+                key={i}
+                className="flex gap-4 leading-relaxed text-[var(--color-fg)]"
+              >
+                <span
+                  aria-hidden
+                  className="mt-2.5 inline-block h-1 w-3 shrink-0 bg-[var(--color-accent)]"
+                />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       {p.images && p.images.length > 0 && (

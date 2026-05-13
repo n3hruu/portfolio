@@ -26,6 +26,7 @@ export default function ProjectsIndex() {
             title={p.title}
             meta={`${p.kind} · ${p.year}`}
             cover={p.cover}
+            logo={p.logo}
             description={p.description}
           />
         ))}

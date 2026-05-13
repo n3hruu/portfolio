@@ -8,6 +8,7 @@ export default function ProjectCard({
   cover,
   description,
   coverScale,
+  logo,
 }: {
   href: string;
   title: string;
@@ -18,10 +19,17 @@ export default function ProjectCard({
   // black bars baked into a film still). 1 = no zoom. Overrides the
   // default subtle hover scale.
   coverScale?: number;
+  // When true, treat the cover as a brand logo: contain (don't crop) on a
+  // cream background instead of edge-to-edge object-cover.
+  logo?: boolean;
 }) {
   return (
     <Link href={href} className="group block">
-      <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-surface)]">
+      <div
+        className={`relative aspect-[4/3] overflow-hidden ${
+          logo ? "bg-[#f5f1e8]" : "bg-[var(--color-surface)]"
+        }`}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={asset(cover)}
@@ -29,9 +37,11 @@ export default function ProjectCard({
           loading="lazy"
           style={coverScale ? { transform: `scale(${coverScale})` } : undefined}
           className={
-            coverScale
-              ? "h-full w-full object-cover"
-              : "h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            logo
+              ? "h-full w-full object-contain p-10 transition-transform duration-700 group-hover:scale-[1.03]"
+              : coverScale
+                ? "h-full w-full object-cover"
+                : "h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           }
         />
       </div>
