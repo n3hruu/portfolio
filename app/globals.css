@@ -34,3 +34,47 @@ a {
 a:hover {
   color: var(--color-accent);
 }
+
+/* Logo hero animations (Option A: entrance fade + hover shimmer) */
+.logo-enter {
+  animation: logo-enter 1s ease-out both;
+}
+
+.logo-shimmer {
+  transform: translateX(-150%);
+}
+
+.logo-shimmer-group:hover .logo-shimmer {
+  animation: logo-shimmer-sweep 700ms ease-out;
+}
+
+@keyframes logo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logo-shimmer-sweep {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-enter,
+  .logo-shimmer-group:hover .logo-shimmer {
+    animation: none;
+  }
+  .logo-enter {
+    opacity: 1;
+    transform: none;
+  }
+}

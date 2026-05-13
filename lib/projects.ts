@@ -30,6 +30,11 @@ export const projects: MiscProject[] = [
       "Co-founded student-run talent agency through Syracuse University's TRF 430 course; signed and managed indie-pop artist Isabella Allon, who won Song of the Year at The Ottos.",
     cover: "/images/projects/m-and-h-inc/logo.png",
     logo: true,
+    images: [
+      "/images/projects/m-and-h-inc/01.jpg",
+      "/images/projects/m-and-h-inc/02.jpg",
+      "/images/projects/m-and-h-inc/03.jpg",
+    ],
     body:
       "Co-founded with Jack Hicks through TRF 430, M&H Inc. is a student-run talent agency built around one idea: give artists what they need to move, and then get out of the way.\n\nOur client, Isabella Allon, won Song of the Year at the Otto Awards, shot a music video for her upcoming release, and on April 25th opened for West 22nd, a band with nearly one million monthly listeners on Spotify. Since we started working with her, she has grown by over 1,500 monthly listeners. We help develop her creative vision, connect her to real opportunities, and make sure she stays in full control of who she is.\n\nWe also completed a full A&R pitch for potential client honestav to UTA representatives. The pitch was named the top in the class.",
     highlights: [

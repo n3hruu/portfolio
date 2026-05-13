@@ -42,13 +42,19 @@ export default async function ProjectDetail({
       </Link>
 
       {p.logo && (
-        <div className="mt-6 flex items-center justify-center bg-[#f5f1e8] px-8 py-16 sm:py-24">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset(p.cover)}
-            alt={`${p.title} logo`}
-            className="max-h-64 w-auto object-contain"
-          />
+        <div className="mt-6 flex items-center justify-center overflow-hidden bg-[#f5f1e8] px-8 py-16 sm:py-24">
+          <div className="logo-enter logo-shimmer-group relative inline-block overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset(p.cover)}
+              alt={`${p.title} logo`}
+              className="block max-h-64 w-auto object-contain"
+            />
+            <span
+              aria-hidden
+              className="logo-shimmer pointer-events-none absolute inset-y-0 left-0 w-full bg-gradient-to-r from-transparent via-white/55 to-transparent"
+            />
+          </div>
         </div>
       )}
 
@@ -115,7 +121,7 @@ export default async function ProjectDetail({
 
       {p.images && p.images.length > 0 && (
         <div className="mt-12">
-          <Gallery images={p.images} alt={p.title} variant="grid" />
+          <Gallery images={p.images} alt={p.title} variant="masonry" />
         </div>
       )}
 
