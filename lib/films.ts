@@ -38,7 +38,6 @@ export const films: FilmProject[] = [
     synopsis:
       "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
     cover: "/images/film/night-shift/01.jpg",
-    coverScale: 1.15,
     stills: [
       "/images/film/night-shift/01.jpg",
       "/images/film/night-shift/02.jpg",
