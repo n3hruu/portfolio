@@ -115,7 +115,12 @@ export default async function ProjectDetail({
 
       {p.images && p.images.length > 0 && (
         <div className="mt-12">
-          <Gallery images={p.images} alt={p.title} variant="masonry" />
+          <Gallery
+            images={p.images}
+            alt={p.title}
+            variant="masonry"
+            captions={p.captions}
+          />
         </div>
       )}
 

@@ -11,6 +11,7 @@ export default function Gallery({
   variant = "grid",
   alt,
   columns = 3,
+  captions,
 }: {
   images: string[];
   variant?: Variant;
@@ -18,6 +19,8 @@ export default function Gallery({
   // Masonry column count on large screens. Use 2 for landscape-heavy
   // collections where you want each photo to read larger.
   columns?: 2 | 3;
+  // Optional caption per image, indexed parallel to `images`.
+  captions?: string[];
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -31,22 +34,31 @@ export default function Gallery({
     return (
       <>
         <div className={masonryClass}>
-          {images.map((src, i) => (
-            <button
-              key={src}
-              type="button"
-              onClick={() => setOpenIndex(i)}
-              className="mb-4 block w-full overflow-hidden break-inside-avoid bg-[var(--color-surface)] focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={asset(src)}
-                alt={`${alt} ${i + 1}`}
-                loading="lazy"
-                className="block h-auto w-full transition-opacity hover:opacity-90"
-              />
-            </button>
-          ))}
+          {images.map((src, i) => {
+            const caption = captions?.[i];
+            return (
+              <figure key={src} className="mb-6 break-inside-avoid">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(i)}
+                  className="block w-full overflow-hidden bg-[var(--color-surface)] focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={asset(src)}
+                    alt={caption || `${alt} ${i + 1}`}
+                    loading="lazy"
+                    className="block h-auto w-full transition-opacity hover:opacity-90"
+                  />
+                </button>
+                {caption && (
+                  <figcaption className="mt-2 text-xs italic leading-snug text-[var(--color-muted)]">
+                    {caption}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          })}
         </div>
         {openIndex !== null && (
           <Lightbox
@@ -64,22 +76,31 @@ export default function Gallery({
   return (
     <>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {images.map((src, i) => (
-          <button
-            key={src}
-            type="button"
-            onClick={() => setOpenIndex(i)}
-            className="group relative block aspect-[3/2] overflow-hidden bg-[var(--color-surface)] focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={asset(src)}
-              alt={`${alt} ${i + 1}`}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          </button>
-        ))}
+        {images.map((src, i) => {
+          const caption = captions?.[i];
+          return (
+            <figure key={src} className="flex flex-col">
+              <button
+                type="button"
+                onClick={() => setOpenIndex(i)}
+                className="group relative block aspect-[3/2] overflow-hidden bg-[var(--color-surface)] focus:outline-none focus:ring-1 focus:ring-[var(--color-accent)]"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(src)}
+                  alt={caption || `${alt} ${i + 1}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </button>
+              {caption && (
+                <figcaption className="mt-2 text-xs italic leading-snug text-[var(--color-muted)]">
+                  {caption}
+                </figcaption>
+              )}
+            </figure>
+          );
+        })}
       </div>
       {openIndex !== null && (
         <Lightbox

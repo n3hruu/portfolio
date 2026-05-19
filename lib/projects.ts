@@ -6,6 +6,9 @@ export type MiscProject = {
   description: string;
   cover: string;
   images?: string[];
+  // Optional caption per image, indexed parallel to `images`. Use an
+  // empty string to omit a caption for a particular image.
+  captions?: string[];
   body?: string;
   // Bullet list of highlights / achievements rendered as a section
   // beneath the body on the detail page.
@@ -35,8 +38,13 @@ export const projects: MiscProject[] = [
       "/images/projects/m-and-h-inc/02.jpg",
       "/images/projects/m-and-h-inc/03.jpg",
     ],
+    captions: [
+      "Opening for West 22nd at The Song & Dance — April 25, 2026.",
+      "Jack Hicks, Isabella Allon, and me.",
+      "Filming Isabella's live music video performance.",
+    ],
     body:
-      "Co-founded with Jack Hicks through TRF 430, M&H Inc. is a student-run talent agency built around one idea: give artists what they need to move, and then get out of the way.\n\nOur client, Isabella Allon, won Song of the Year at the Otto Awards, shot a music video for her upcoming release, and on April 25th opened for West 22nd, a band with nearly one million monthly listeners on Spotify. Since we started working with her, she has grown by over 1,500 monthly listeners. We help develop her creative vision, connect her to real opportunities, and make sure she stays in full control of who she is.\n\nWe also completed a full A&R pitch for potential client honestav to UTA representatives. The pitch was named the top in the class.",
+      "Co-founded with Jack Hicks through Syracuse University's TRF 430 Course, M&H Inc. is a student-run talent agency built around one idea: give artists what they need to move, and then get out of the way.\n\nThroughout the semester, we signed and managed indie-pop artist Isabella Allon. During our tenure as her manager, we spearheaded a social media marketing strategy to promote the release of her two newest singles, facilitated video and photo shoots, and organized the production of a live music video performance in collaboration with a local filmmaker. On April 25th, 2026, Isabella performed as the opening act for the band West 22nd, which sold out with over 400 attendees. During our time representing Isabella, she grew from only 35 to over 1,500 monthly listeners on Spotify. We help develop her creative vision, connect her to real opportunities, all while making sure she stays in full control of who she is.",
     highlights: [
       "Co-founded with Jack Hicks through Syracuse University's TRF 430 Artist Representation course",
       "Signed and managed indie-pop artist Isabella Allon as co-manager and talent agent",
