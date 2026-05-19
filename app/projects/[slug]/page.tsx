@@ -42,19 +42,13 @@ export default async function ProjectDetail({
       </Link>
 
       {p.logo && (
-        <div className="mt-6 flex items-center justify-center overflow-hidden bg-[#f5f1e8] px-8 py-16 sm:py-24">
-          <div className="logo-enter logo-shimmer-group relative inline-block overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={asset(p.cover)}
-              alt={`${p.title} logo`}
-              className="block max-h-64 w-auto object-contain"
-            />
-            <span
-              aria-hidden
-              className="logo-shimmer pointer-events-none absolute inset-y-0 left-0 w-full bg-gradient-to-r from-transparent via-white/55 to-transparent"
-            />
-          </div>
+        <div className="mt-6 flex items-center justify-center bg-[#c8bb9d] px-8 py-20 sm:py-28">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={asset(p.cover)}
+            alt={`${p.title} logo`}
+            className="logo-enter block max-h-80 w-auto object-contain sm:max-h-[26rem]"
+          />
         </div>
       )}
 
