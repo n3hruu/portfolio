@@ -47,7 +47,7 @@ export default async function ProjectDetail({
           <img
             src={asset(p.cover)}
             alt={`${p.title} logo`}
-            className="logo-enter block max-h-80 w-auto object-contain sm:max-h-96"
+            className="logo-enter block max-h-64 w-auto object-contain"
           />
         </div>
       )}

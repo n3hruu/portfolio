@@ -55,10 +55,11 @@ export const projects: MiscProject[] = [
       "/images/projects/m-and-h-inc/03.jpg",
     ],
     captions: [
-      "Opening for West 22nd at The Song & Dance (April 25, 2026)",
+      "Opening for West 22nd at The Song & Dance (April 25, 2026).",
       "Jack Hicks, Isabella Allon, and me.",
       "Filming Isabella's live music video performance.",
     ],
+    galleryColumns: 2,
     body:
       "Throughout the semester, we signed and managed indie-pop artist Isabella Allon. During our tenure as her manager, we spearheaded a social media marketing strategy to promote the release of her two newest singles, facilitated video and photo shoots, and organized the production of a live music video performance in collaboration with a local filmmaker. On April 25th, 2026, Isabella performed as the opening act for the band West 22nd, which sold out with over 400 attendees. During our time representing Isabella, she grew from only 35 to over 1,500 monthly listeners on Spotify. We help develop her creative vision, connect her to real opportunities, all while making sure she stays in full control of who she is.",
   },
