@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { asset } from "@/lib/asset";
+import { inlineMarkup } from "@/lib/markup";
 
 export default function ProjectCard({
   href,
@@ -57,7 +58,7 @@ export default function ProjectCard({
       </div>
       {description && (
         <p className="mt-2 max-w-prose text-sm leading-relaxed text-[var(--color-muted)]">
-          {description}
+          {inlineMarkup(description)}
         </p>
       )}
     </Link>

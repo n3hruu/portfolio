@@ -33,7 +33,7 @@ export const projects: MiscProject[] = [
     year: 2026,
     kind: "Journal Article",
     description:
-      "Originally written for a writing class and later published in Intertext, Syracuse University's undergraduate academic journal, \"Through the Lens of Fire: Photography and Resistance\" explores how cultural histories can be preserved and understood through intentional photography.",
+      "Originally written for a writing class and later published in *Intertext*, Syracuse University's undergraduate academic journal, \"Through the Lens of Fire: Photography and Resistance\" explores how cultural histories can be preserved and understood through intentional photography.",
     cover: "/images/projects/through-the-lens-of-fire/cover.jpg",
     pdf: "/projects/through-the-lens-of-fire/article.pdf",
     links: [

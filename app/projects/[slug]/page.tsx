@@ -4,6 +4,7 @@ import Link from "next/link";
 import Gallery from "@/components/Gallery";
 import { projects, getProject } from "@/lib/projects";
 import { asset } from "@/lib/asset";
+import { inlineMarkup } from "@/lib/markup";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -59,7 +60,9 @@ export default async function ProjectDetail({
         <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
           {p.kind} · {p.year}
         </p>
-        <p className="mt-6 text-lg leading-relaxed">{p.description}</p>
+        <p className="mt-6 text-lg leading-relaxed">
+          {inlineMarkup(p.description)}
+        </p>
       </header>
 
       {p.pdf && (
@@ -87,7 +90,7 @@ export default async function ProjectDetail({
         <div className="prose-cinematic max-w-prose leading-relaxed text-[var(--color-fg)]">
           {p.body.split("\n\n").map((para, i) => (
             <p key={i} className="mb-6">
-              {para}
+              {inlineMarkup(para)}
             </p>
           ))}
         </div>
