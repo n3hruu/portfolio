@@ -28,29 +28,6 @@ export type MiscProject = {
 
 export const projects: MiscProject[] = [
   {
-    slug: "m-and-h-inc",
-    title: "M&H Inc.",
-    year: 2026,
-    kind: "Talent Representation",
-    description:
-      "Co-founded with Jack Hicks through Syracuse University's TRF 430 Course, M&H Inc. is a student-run talent agency built around one idea: give artists what they need to move, and then get out of the way.",
-    cover: "/images/projects/m-and-h-inc/logo.png",
-    logo: true,
-    images: [
-      "/images/projects/m-and-h-inc/01.jpg",
-      "/images/projects/m-and-h-inc/02.jpg",
-      "/images/projects/m-and-h-inc/03.jpg",
-    ],
-    captions: [
-      "Opening for West 22nd at The Song & Dance — April 25, 2026.",
-      "Jack Hicks, Isabella Allon, and me.",
-      "Filming Isabella's live music video performance.",
-    ],
-    galleryColumns: 2,
-    body:
-      "Throughout the semester, we signed and managed indie-pop artist Isabella Allon. During our tenure as her manager, we spearheaded a social media marketing strategy to promote the release of her two newest singles, facilitated video and photo shoots, and organized the production of a live music video performance in collaboration with a local filmmaker. On April 25th, 2026, Isabella performed as the opening act for the band West 22nd, which sold out with over 400 attendees. During our time representing Isabella, she grew from only 35 to over 1,500 monthly listeners on Spotify. We help develop her creative vision, connect her to real opportunities, all while making sure she stays in full control of who she is.",
-  },
-  {
     slug: "through-the-lens-of-fire",
     title: "Through the Lens of Fire: Photography and Resistance",
     year: 2026,
@@ -62,6 +39,28 @@ export const projects: MiscProject[] = [
     links: [
       { label: "Read Online", href: "https://surface.syr.edu/intertext/" },
     ],
+  },
+  {
+    slug: "m-and-h-inc",
+    title: "M&H Inc.",
+    year: 2026,
+    kind: "Talent Representation",
+    description:
+      "Co-founded with Jack Hicks through Syracuse University's TRF 430 Course, M&H Inc. is a student-run talent agency built on a simple belief: give artists world-class support, then trust them with the rest.",
+    cover: "/images/projects/m-and-h-inc/logo.png",
+    logo: true,
+    images: [
+      "/images/projects/m-and-h-inc/01.jpg",
+      "/images/projects/m-and-h-inc/02.jpg",
+      "/images/projects/m-and-h-inc/03.jpg",
+    ],
+    captions: [
+      "Opening for West 22nd at The Song & Dance (April 25, 2026)",
+      "Jack Hicks, Isabella Allon, and me.",
+      "Filming Isabella's live music video performance.",
+    ],
+    body:
+      "Throughout the semester, we signed and managed indie-pop artist Isabella Allon. During our tenure as her manager, we spearheaded a social media marketing strategy to promote the release of her two newest singles, facilitated video and photo shoots, and organized the production of a live music video performance in collaboration with a local filmmaker. On April 25th, 2026, Isabella performed as the opening act for the band West 22nd, which sold out with over 400 attendees. During our time representing Isabella, she grew from only 35 to over 1,500 monthly listeners on Spotify. We help develop her creative vision, connect her to real opportunities, all while making sure she stays in full control of who she is.",
   },
 ];
 
