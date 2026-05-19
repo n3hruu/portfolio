@@ -37,7 +37,7 @@ export default function Gallery({
           {images.map((src, i) => {
             const caption = captions?.[i];
             return (
-              <figure key={src} className="mb-6 break-inside-avoid">
+              <figure key={src} className="mb-8 break-inside-avoid">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(i)}
@@ -52,7 +52,7 @@ export default function Gallery({
                   />
                 </button>
                 {caption && (
-                  <figcaption className="mt-2 text-xs italic leading-snug text-[var(--color-muted)]">
+                  <figcaption className="mt-4 font-serif text-base italic leading-snug tracking-wide text-[var(--color-muted)]">
                     {caption}
                   </figcaption>
                 )}
@@ -94,7 +94,7 @@ export default function Gallery({
                 />
               </button>
               {caption && (
-                <figcaption className="mt-2 text-xs italic leading-snug text-[var(--color-muted)]">
+                <figcaption className="mt-4 font-serif text-base italic leading-snug tracking-wide text-[var(--color-muted)]">
                   {caption}
                 </figcaption>
               )}

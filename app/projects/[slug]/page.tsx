@@ -114,11 +114,12 @@ export default async function ProjectDetail({
       )}
 
       {p.images && p.images.length > 0 && (
-        <div className="mt-12">
+        <div className="mt-16">
           <Gallery
             images={p.images}
             alt={p.title}
             variant="masonry"
+            columns={p.galleryColumns ?? 3}
             captions={p.captions}
           />
         </div>

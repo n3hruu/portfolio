@@ -13,6 +13,9 @@ export type MiscProject = {
   // Bullet list of highlights / achievements rendered as a section
   // beneath the body on the detail page.
   highlights?: string[];
+  // Masonry column count on large screens for the project's gallery.
+  // 2 = larger photos. Defaults to 3 if omitted.
+  galleryColumns?: 2 | 3;
   pdf?: string;
   links?: { label: string; href: string }[];
   // When true, the cover image is treated as a brand logo rather than a
@@ -30,7 +33,7 @@ export const projects: MiscProject[] = [
     year: 2026,
     kind: "Talent Representation",
     description:
-      "Co-founded student-run talent agency through Syracuse University's TRF 430 course; signed and managed indie-pop artist Isabella Allon, who won Song of the Year at The Ottos.",
+      "Co-founded with Jack Hicks through Syracuse University's TRF 430 Course, M&H Inc. is a student-run talent agency built around one idea: give artists what they need to move, and then get out of the way.",
     cover: "/images/projects/m-and-h-inc/logo.png",
     logo: true,
     images: [
@@ -43,18 +46,9 @@ export const projects: MiscProject[] = [
       "Jack Hicks, Isabella Allon, and me.",
       "Filming Isabella's live music video performance.",
     ],
+    galleryColumns: 2,
     body:
-      "Co-founded with Jack Hicks through Syracuse University's TRF 430 Course, M&H Inc. is a student-run talent agency built around one idea: give artists what they need to move, and then get out of the way.\n\nThroughout the semester, we signed and managed indie-pop artist Isabella Allon. During our tenure as her manager, we spearheaded a social media marketing strategy to promote the release of her two newest singles, facilitated video and photo shoots, and organized the production of a live music video performance in collaboration with a local filmmaker. On April 25th, 2026, Isabella performed as the opening act for the band West 22nd, which sold out with over 400 attendees. During our time representing Isabella, she grew from only 35 to over 1,500 monthly listeners on Spotify. We help develop her creative vision, connect her to real opportunities, all while making sure she stays in full control of who she is.",
-    highlights: [
-      "Co-founded with Jack Hicks through Syracuse University's TRF 430 Artist Representation course",
-      "Signed and managed indie-pop artist Isabella Allon as co-manager and talent agent",
-      "Coordinated her placement as opening act for West 22nd at The Song & Dance — sold out, 400 attendees (April 25, 2026)",
-      "Managed rollout for two singles (\"Took the Lead,\" \"Lover\") with a third releasing shortly",
-      "Grew her audience to 2,000+ monthly listeners across platforms",
-      "Supported press campaign resulting in a Daily Orange feature and Song of the Year win at The Ottos, SU's student music awards",
-      "Facilitated music video shoot for her upcoming release",
-      "Completed A&R pitch for potential client honestav to UTA representatives — named top pitch in the class",
-    ],
+      "Throughout the semester, we signed and managed indie-pop artist Isabella Allon. During our tenure as her manager, we spearheaded a social media marketing strategy to promote the release of her two newest singles, facilitated video and photo shoots, and organized the production of a live music video performance in collaboration with a local filmmaker. On April 25th, 2026, Isabella performed as the opening act for the band West 22nd, which sold out with over 400 attendees. During our time representing Isabella, she grew from only 35 to over 1,500 monthly listeners on Spotify. We help develop her creative vision, connect her to real opportunities, all while making sure she stays in full control of who she is.",
   },
   {
     slug: "through-the-lens-of-fire",
