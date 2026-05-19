@@ -42,12 +42,12 @@ export default async function ProjectDetail({
       </Link>
 
       {p.logo && (
-        <div className="mt-6 flex items-center justify-center bg-[#c8bb9d] px-8 py-20 sm:py-28">
+        <div className="mt-6 flex items-center justify-center bg-[#dcd2c2] px-8 py-16 sm:py-24">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={asset(p.cover)}
             alt={`${p.title} logo`}
-            className="logo-enter block max-h-80 w-auto object-contain sm:max-h-[26rem]"
+            className="logo-enter block max-h-80 w-auto object-contain sm:max-h-96"
           />
         </div>
       )}

@@ -27,7 +27,7 @@ export default function ProjectCard({
     <Link href={href} className="group block">
       <div
         className={`relative aspect-[4/3] overflow-hidden ${
-          logo ? "bg-[#c8bb9d]" : "bg-[var(--color-surface)]"
+          logo ? "bg-[#dcd2c2]" : "bg-[var(--color-surface)]"
         }`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
