@@ -39,8 +39,7 @@ export const series: PhotoSeries[] = [
     slug: "environments",
     title: "Environments",
     year: "2019–2023",
-    description:
-      "Studies of place — natural and built, observed across four years.",
+    description: "Studies of place.",
     cover: "/images/photography/environments/01IMG_5764.JPG",
     images: [
       "/images/photography/environments/01IMG_5764.JPG",
