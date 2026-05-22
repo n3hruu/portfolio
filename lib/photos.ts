@@ -15,8 +15,7 @@ export const series: PhotoSeries[] = [
     slug: "concert-photography",
     title: "Concert Photography",
     year: "2024–2026",
-    description:
-      "Live music captured from the pit and beyond. Featuring Role Model, The Driver Era, Smino, and others.",
+    description: "Live music captured from the pit and beyond.",
     cover: "/images/photography/concert-photography/02RoleModel-4.jpg",
     images: [
       "/images/photography/concert-photography/01RossLynch-3.jpg",
