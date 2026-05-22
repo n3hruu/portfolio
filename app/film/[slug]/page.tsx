@@ -72,20 +72,32 @@ export default async function FilmDetail({
             <div>
               <h1 className="font-serif text-5xl tracking-tight">{film.title}</h1>
               <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
-                {[film.role, film.year, film.runtime].filter(Boolean).join(" · ")}
+                {[film.role, film.year].filter(Boolean).join(" · ")}
               </p>
               <p className="mt-6 text-lg leading-relaxed">{film.synopsis}</p>
+              {film.runtime && (
+                <p className="mt-6 text-xs uppercase tracking-widest text-[var(--color-muted)]">
+                  <span className="text-[var(--color-fg)]">Runtime:</span>{" "}
+                  {film.runtime}
+                </p>
+              )}
             </div>
           </div>
         ) : (
           <>
             <h1 className="font-serif text-5xl tracking-tight">{film.title}</h1>
             <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
-              {[film.role, film.year, film.runtime].filter(Boolean).join(" · ")}
+              {[film.role, film.year].filter(Boolean).join(" · ")}
             </p>
             <p className="mt-6 max-w-prose text-lg leading-relaxed">
               {film.synopsis}
             </p>
+            {film.runtime && (
+              <p className="mt-6 text-xs uppercase tracking-widest text-[var(--color-muted)]">
+                <span className="text-[var(--color-fg)]">Runtime:</span>{" "}
+                {film.runtime}
+              </p>
+            )}
           </>
         )}
       </header>
