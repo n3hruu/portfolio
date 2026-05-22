@@ -15,7 +15,7 @@ export default function ProjectsIndex() {
         </p>
         <h1 className="mt-3 font-serif text-5xl tracking-tight">Projects</h1>
         <p className="mt-4 max-w-prose text-[var(--color-muted)]">
-          Miscellaneous Work.
+          Writing, Ventures, and Side Projects.
         </p>
       </header>
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
