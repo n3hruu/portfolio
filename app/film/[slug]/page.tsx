@@ -74,13 +74,12 @@ export default async function FilmDetail({
               <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
                 {[film.role, film.year].filter(Boolean).join(" · ")}
               </p>
-              <p className="mt-6 text-lg leading-relaxed">{film.synopsis}</p>
               {film.runtime && (
-                <p className="mt-6 text-xs uppercase tracking-widest text-[var(--color-muted)]">
-                  <span className="text-[var(--color-fg)]">Runtime:</span>{" "}
+                <span className="mt-5 inline-block border border-[var(--color-muted)]/40 px-3 py-1 text-sm tracking-wider text-[var(--color-fg)]">
                   {film.runtime}
-                </p>
+                </span>
               )}
+              <p className="mt-6 text-lg leading-relaxed">{film.synopsis}</p>
             </div>
           </div>
         ) : (
@@ -89,15 +88,14 @@ export default async function FilmDetail({
             <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
               {[film.role, film.year].filter(Boolean).join(" · ")}
             </p>
+            {film.runtime && (
+              <span className="mt-5 inline-block border border-[var(--color-muted)]/40 px-3 py-1 text-sm tracking-wider text-[var(--color-fg)]">
+                {film.runtime}
+              </span>
+            )}
             <p className="mt-6 max-w-prose text-lg leading-relaxed">
               {film.synopsis}
             </p>
-            {film.runtime && (
-              <p className="mt-6 text-xs uppercase tracking-widest text-[var(--color-muted)]">
-                <span className="text-[var(--color-fg)]">Runtime:</span>{" "}
-                {film.runtime}
-              </p>
-            )}
           </>
         )}
       </header>
