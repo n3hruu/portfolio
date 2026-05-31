@@ -54,8 +54,8 @@ export default function Home() {
               <ProjectCard
                 href={`/film/${featuredFilm.slug}/`}
                 title={featuredFilm.title}
-                meta={featuredFilm.projectType ?? "Film"}
-                subtitle={featuredFilm.role}
+                meta={featuredFilm.role}
+                subtitle={featuredFilm.projectType ?? "Film"}
                 subtitleRight={String(featuredFilm.year)}
                 cover={featuredFilm.cover}
                 coverScale={featuredFilm.coverScale}

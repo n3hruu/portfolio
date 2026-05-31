@@ -21,8 +21,8 @@ export default function FilmIndex() {
             key={film.slug}
             href={`/film/${film.slug}/`}
             title={film.title}
-            meta={film.projectType}
-            subtitle={film.role}
+            meta={film.role}
+            subtitle={film.projectType}
             subtitleRight={String(film.year)}
             cover={film.cover}
             coverScale={film.coverScale}
