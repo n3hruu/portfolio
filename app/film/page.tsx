@@ -21,7 +21,9 @@ export default function FilmIndex() {
             key={film.slug}
             href={`/film/${film.slug}/`}
             title={film.title}
-            meta={[film.role, film.year].filter(Boolean).join(" · ")}
+            meta={film.projectType}
+            subtitle={film.role}
+            subtitleRight={String(film.year)}
             cover={film.cover}
             coverScale={film.coverScale}
             description={film.shortSynopsis ?? film.synopsis}

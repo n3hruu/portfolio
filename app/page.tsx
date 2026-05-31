@@ -54,7 +54,9 @@ export default function Home() {
               <ProjectCard
                 href={`/film/${featuredFilm.slug}/`}
                 title={featuredFilm.title}
-                meta={["Film", featuredFilm.year].filter(Boolean).join(" · ")}
+                meta={featuredFilm.projectType ?? "Film"}
+                subtitle={featuredFilm.role}
+                subtitleRight={String(featuredFilm.year)}
                 cover={featuredFilm.cover}
                 coverScale={featuredFilm.coverScale}
                 description={featuredFilm.shortSynopsis ?? featuredFilm.synopsis}

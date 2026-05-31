@@ -17,6 +17,9 @@ export type FilmProject = {
   title: string;
   year: number;
   role: string;
+  // Format / category shown to the right of the title on cards, e.g.
+  // "Short Film", "Documentary", "Music Video", "Feature".
+  projectType?: string;
   // Full synopsis shown on the detail page.
   synopsis: string;
   // Short version shown on the Film index card. Falls back to `synopsis`
@@ -40,7 +43,8 @@ export const films: FilmProject[] = [
     slug: "night-shift",
     title: "Night Shift",
     year: 2025,
-    role: "Editor, Producer, Assistant Director",
+    role: "Producer, Editor, Assistant Director",
+    projectType: "Short Film",
     synopsis:
       "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom. As he searches for help, Miller is met with an impenetrable bureaucracy that treats death as just another administrative inconvenience. Trapped inside a surreal system where labor and identity are inseparable, Miller is slowly absorbed into a night shift that never truly ends.",
     shortSynopsis:
