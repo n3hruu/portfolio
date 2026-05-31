@@ -148,14 +148,14 @@ export const films: FilmProject[] = [
     stills: [],
   },
   {
-    slug: "motherer",
+    slug: "untitled",
     title: "mother****er",
     year: 2023,
     role: "Director, Editor",
     projectType: "Short Film",
     synopsis: "Details forthcoming.",
     shortSynopsis: "",
-    cover: "/images/placeholders/film-motherer.svg",
+    cover: "/images/placeholders/film-untitled.svg",
     stills: [],
   },
   {
