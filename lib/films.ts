@@ -27,6 +27,9 @@ export type FilmProject = {
   shortSynopsis?: string;
   // Runtime as MM:SS for short films, or "Xm" for features. Optional.
   runtime?: string;
+  // External links shown as a row beneath the synopsis, e.g. "Watch" (a
+  // YouTube/Vimeo link) or "IMDb".
+  links?: { label: string; href: string }[];
   cover: string;
   stills: string[];
   poster?: string;
@@ -61,6 +64,13 @@ export const films: FilmProject[] = [
     shortSynopsis:
       "On his first night cleaning a corporate office building, Miller Johnson, a reclusive janitor struggling to make rent, discovers a dead coworker in a basement bathroom.",
     runtime: "9:52",
+    links: [
+      { label: "Watch", href: "https://youtu.be/5_v9ct5CiAI" },
+      {
+        label: "IMDb",
+        href: "https://www.imdb.com/title/tt39109391/?ref_=nv_sr_srsg_6_tt_8_nm_0_in_0_q_night%20shift%202025%20",
+      },
+    ],
     cover: "/images/film/night-shift/01.jpg",
     stills: [
       "/images/film/night-shift/01.jpg",

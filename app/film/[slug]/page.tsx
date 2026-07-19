@@ -74,10 +74,23 @@ export default async function FilmDetail({
               <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
                 {[film.role, film.year].filter(Boolean).join(" · ")}
               </p>
-              {film.runtime && (
-                <span className="mt-5 inline-block border border-[var(--color-muted)]/40 px-3 py-1 text-sm tracking-wider text-[var(--color-fg)]">
-                  {film.runtime}
-                </span>
+              {film.links && film.links.length > 0 && (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {film.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 border border-[var(--color-muted)]/40 px-3 py-1 text-sm tracking-wider text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                    >
+                      {link.label}
+                      <span aria-hidden className="text-xs">
+                        ↗
+                      </span>
+                    </a>
+                  ))}
+                </div>
               )}
               <p className="mt-6 text-lg leading-relaxed">{film.synopsis}</p>
             </div>
@@ -88,10 +101,23 @@ export default async function FilmDetail({
             <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
               {[film.role, film.year].filter(Boolean).join(" · ")}
             </p>
-            {film.runtime && (
-              <span className="mt-5 inline-block border border-[var(--color-muted)]/40 px-3 py-1 text-sm tracking-wider text-[var(--color-fg)]">
-                {film.runtime}
-              </span>
+            {film.links && film.links.length > 0 && (
+              <div className="mt-5 flex flex-wrap gap-3">
+                {film.links.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-[var(--color-muted)]/40 px-3 py-1 text-sm tracking-wider text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                  >
+                    {link.label}
+                    <span aria-hidden className="text-xs">
+                      ↗
+                    </span>
+                  </a>
+                ))}
+              </div>
             )}
             <p className="mt-6 max-w-prose text-lg leading-relaxed">
               {film.synopsis}
