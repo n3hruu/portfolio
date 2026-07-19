@@ -136,29 +136,45 @@ export default async function FilmDetail({
         )}
       </header>
 
-      {film.youtubeId && (
+      {film.videos && film.videos.length > 0 && (
         <div className="mb-12">
-          <div className="relative aspect-video overflow-hidden bg-[var(--color-surface)]">
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${film.youtubeId}`}
-              title={film.title}
-              className="absolute inset-0 h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            />
-          </div>
-          <a
-            href={`https://youtu.be/${film.youtubeId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center gap-1.5 border-b border-[var(--color-border)] pb-1 text-sm tracking-wider text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+          <div
+            className={
+              film.videos.length > 1
+                ? "grid grid-cols-1 gap-8 sm:grid-cols-2"
+                : undefined
+            }
           >
-            Watch on YouTube
-            <span aria-hidden className="text-xs">
-              ↗
-            </span>
-          </a>
+            {film.videos.map((v) => (
+              <div key={v.youtubeId}>
+                <div
+                  className={`relative overflow-hidden bg-[var(--color-surface)] ${
+                    v.aspect === "portrait" ? "aspect-[9/16]" : "aspect-video"
+                  }`}
+                >
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`}
+                    title={film.title}
+                    className="absolute inset-0 h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+                <a
+                  href={`https://youtu.be/${v.youtubeId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 border-b border-[var(--color-border)] pb-1 text-sm tracking-wider text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                >
+                  Watch on YouTube
+                  <span aria-hidden className="text-xs">
+                    ↗
+                  </span>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 

@@ -12,6 +12,14 @@ export type Award = {
   type?: string;
 };
 
+export type FilmVideo = {
+  // YouTube video ID (the 11-char id from youtu.be/<id> or watch?v=<id>).
+  youtubeId: string;
+  // Defaults to landscape (16:9) if omitted. Set to "portrait" for
+  // vertical/9:16 source video (Shorts, Reels-style content).
+  aspect?: "portrait";
+};
+
 export type FilmProject = {
   slug: string;
   title: string;
@@ -30,10 +38,10 @@ export type FilmProject = {
   // External links shown as a row beneath the synopsis, e.g. "Watch" (a
   // YouTube/Vimeo link) or "IMDb".
   links?: { label: string; href: string }[];
-  // YouTube video ID (the 11-char id from youtu.be/<id> or watch?v=<id>).
-  // When set, the detail page embeds an inline player below the header,
-  // plus a "Watch on YouTube ↗" fallback link.
-  youtubeId?: string;
+  // Videos embedded inline below the header. One video renders full-width
+  // landscape by default; two or more render side-by-side in a grid, each
+  // at its own aspect ratio. Each gets a "Watch on YouTube ↗" fallback link.
+  videos?: FilmVideo[];
   cover: string;
   stills: string[];
   poster?: string;
@@ -148,7 +156,7 @@ export const films: FilmProject[] = [
     synopsis: "Juice Jam 2024 — JMA Wireless Dome — Syracuse University.",
     cover: "/images/film/juice-jam/cover.jpg",
     stills: [],
-    youtubeId: "HXOdEhyBRlY",
+    videos: [{ youtubeId: "HXOdEhyBRlY" }],
   },
   {
     slug: "text-less-live-more",
