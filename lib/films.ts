@@ -145,10 +145,10 @@ export const films: FilmProject[] = [
     year: 2024,
     role: "Editor, Videographer",
     projectType: "Promotional Video",
-    synopsis: "Details forthcoming.",
-    shortSynopsis: "",
-    cover: "/images/placeholders/film-juice-jam.svg",
+    synopsis: "Juice Jam 2024 — JMA Wireless Dome — Syracuse University.",
+    cover: "/images/film/juice-jam/cover.jpg",
     stills: [],
+    youtubeId: "HXOdEhyBRlY",
   },
   {
     slug: "text-less-live-more",
