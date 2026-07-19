@@ -30,6 +30,10 @@ export type FilmProject = {
   // External links shown as a row beneath the synopsis, e.g. "Watch" (a
   // YouTube/Vimeo link) or "IMDb".
   links?: { label: string; href: string }[];
+  // YouTube video ID (the 11-char id from youtu.be/<id> or watch?v=<id>).
+  // When set, the detail page embeds an inline player below the header,
+  // plus a "Watch on YouTube ↗" fallback link.
+  youtubeId?: string;
   cover: string;
   stills: string[];
   poster?: string;

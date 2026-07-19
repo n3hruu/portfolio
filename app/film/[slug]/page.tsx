@@ -97,6 +97,16 @@ export default async function FilmDetail({
           </div>
         ) : (
           <>
+            {film.stills.length === 0 && (
+              <div className="mb-8 aspect-video overflow-hidden bg-[var(--color-surface)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={asset(film.cover)}
+                  alt={film.title}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
             <h1 className="font-serif text-5xl tracking-tight">{film.title}</h1>
             <p className="mt-3 text-sm uppercase tracking-widest text-[var(--color-muted)]">
               {[film.role, film.year].filter(Boolean).join(" · ")}
@@ -125,6 +135,32 @@ export default async function FilmDetail({
           </>
         )}
       </header>
+
+      {film.youtubeId && (
+        <div className="mb-12">
+          <div className="relative aspect-video overflow-hidden bg-[var(--color-surface)]">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${film.youtubeId}`}
+              title={film.title}
+              className="absolute inset-0 h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+          <a
+            href={`https://youtu.be/${film.youtubeId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-1.5 border-b border-[var(--color-border)] pb-1 text-sm tracking-wider text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+          >
+            Watch on YouTube
+            <span aria-hidden className="text-xs">
+              ↗
+            </span>
+          </a>
+        </div>
+      )}
 
       {film.stills.length > 0 && (
         <Gallery images={film.stills} alt={film.title} variant="grid" />
